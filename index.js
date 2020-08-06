@@ -1,6 +1,4 @@
-const string = `
-
-.doraemon * {
+const string = `.doraemon * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,22 +12,23 @@ const string = `
     position:relative;
   }
   .doraemon {
-    width: 500px;
-    height: 610px;
+    width: 400px;
+    height: 600px;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0;
+    right: 100px;
     margin: auto;
   }
+
   .head {
     width: 384px;
     height: 358px;
     border: 2px solid  #000;
     border-radius: 50%;
     position: absolute;
-    left: 63px;
+    left: 13px;
     top: 20px;
     overflow: hidden;
     background-color: #0097e3;
@@ -537,13 +536,38 @@ const string = `
 let n = 1
 demo1.innerText = string.substr(0,n)
 demo2.innerHTML = string.substr(0,n)
-let id = setInterval(()=>{
-    n+=1
-    if(n>string.length){
-        window.clearInterval(id)
-        return
-    }
-    demo1.innerText = string.substr(0,n)
-    demo2.innerHTML = string.substr(0,n)
-    demo1.scrollTop = demo1.scrollHeight
-},0)
+let time = 0
+const run = ()=>{
+  n+=1
+  if(n>string.length){
+      window.clearInterval(id)
+      return
+  }
+  demo1.innerText = string.substr(0,n)
+  demo2.innerHTML = string.substr(0,n)
+  demo1.scrollTop = demo1.scrollHeight
+}
+
+let id = setInterval(run,time)
+
+btnPause.onclick = ()=>{
+  window.clearInterval(id)
+}
+
+btnPlay.onclick=()=>{
+  id = setInterval(run,time)
+}
+
+btnSlow.onclick = ()=>{
+  window.clearInterval(id)
+  time = 100
+  id = setInterval(run,time)
+}
+
+
+
+btnFast.onclick = ()=>{
+  window.clearInterval(id)
+  time = 0
+  id = setInterval(run,time)
+}

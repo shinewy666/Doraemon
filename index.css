@@ -12,14 +12,26 @@
     background-color: #fc3;
   }
   .doraemon {
-    width: 500px;
-    height: 610px;
+    width: 400px;
+    height: 600px;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0;
+    right: 10px;
     margin: auto;
+  }
+  @media(min-width:500px){
+    .doraemon {
+      width: 500px;
+      height: 610px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
   }
   .head {
     width: 384px;
