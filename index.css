@@ -122,6 +122,14 @@
     background-color: #000;
     position: relative;
   }
+  /* @media(max-width:500px){
+    .mustache-list li {
+      width: 80px;
+      height: 4px;
+      background-color: #000;
+      position: relative;
+    }
+  } */
   .mustache-list li:first-child {
     -webkit-transform: rotate(15deg);
     top: -1.75em;

@@ -28,7 +28,7 @@ const string = `.doraemon * {
     border: 2px solid  #000;
     border-radius: 50%;
     position: absolute;
-    left: 13px;
+    left: 63px;
     top: 20px;
     overflow: hidden;
     background-color: #0097e3;
@@ -123,6 +123,14 @@ const string = `.doraemon * {
     background-color: #000;
     position: relative;
   }
+  @media(max-width:500px){
+    .mustache-list li {
+      width: 60px;
+      height: 4px;
+      background-color: #000;
+      position: relative;
+    }
+  }
   .mustache-list li:first-child {
     -webkit-transform: rotate(15deg);
     top: -1.75em;
@@ -134,7 +142,7 @@ const string = `.doraemon * {
   .mustache-list.left {
     -webkit-transform: rotate(15deg);
     top: 165px;
-    left: -5px;
+    left: 5px;
   }
   .mustache-list.right {
     -webkit-transform: scaleX(-1.4) rotate(0deg);
